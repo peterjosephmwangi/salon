@@ -49,7 +49,7 @@ export default function Services() {
       description:
         "Define your look with our expert eyebrow shaping and eyelash extensions.",
       icon: "👁️",
-      link: "/services/eyebrows-eyelashes",
+      link: "/services/eyebrows",
     },
     {
       title: "Waxing & Hair Removal",
