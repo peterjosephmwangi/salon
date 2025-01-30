@@ -1,10 +1,20 @@
-import React from 'react'
+import React from 'react';
+import Link from 'next/link';
 
 const Hero = () => {
   return (
-    <section className="relative bg-gray-900 text-white mt-4">
-      {/* Background Image */}
-      <div className="absolute inset-0 bg-cover bg-center bg-hero-pattern opacity-80"></div>
+    <section className="relative w-full h-screen text-white">
+      {/* Background Video */}
+      <video
+        autoPlay
+        loop
+        muted
+        playsInline
+        className="absolute inset-0 w-full h-full object-cover"
+      >
+        <source src="/images/salon.mp4" type="video/mp4" />
+        Your browser does not support the video tag.
+      </video>
 
       {/* Overlay */}
       <div className="absolute inset-0 bg-black bg-opacity-50"></div>
@@ -18,16 +28,20 @@ const Hero = () => {
           Pamper yourself with our professional salon services, from hair styling to skincare treatments. Step into elegance and confidence.
         </p>
         <div className="mt-6 flex flex-wrap justify-center gap-4">
-          <button className="px-6 py-3 bg-pink-600 hover:bg-pink-700 text-white rounded-lg shadow-lg transition">
-            Book an Appointment
-          </button>
-          <button className="px-6 py-3 bg-gray-800 hover:bg-gray-700 text-white rounded-lg shadow-lg transition">
-            Explore Services
-          </button>
+          <Link href="/booking">
+            <button className="px-6 py-3 bg-pink-600 hover:bg-pink-700 text-white rounded-lg shadow-lg transition">
+              Book an Appointment
+            </button>
+          </Link>
+          <Link href="/services">
+            <button className="px-6 py-3 bg-gray-800 hover:bg-gray-700 text-white rounded-lg shadow-lg transition">
+              Explore Services
+            </button>
+          </Link>
         </div>
       </div>
     </section>
-  )
-}
+  );
+};
 
 export default Hero;
