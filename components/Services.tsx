@@ -69,6 +69,7 @@ export default function Services() {
 
   return (
     <section className="py-6 bg-white">
+      
       <div className="container mx-auto px-4 md:px-8 lg:px-12">
         <h2 className="text-4xl font-bold text-center text-gray-800 mb-6">
           Our Services

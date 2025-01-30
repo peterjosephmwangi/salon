@@ -1,36 +1,158 @@
-This is a [Next.js](https://nextjs.org) project bootstrapped with [`create-next-app`](https://nextjs.org/docs/app/api-reference/cli/create-next-app).
+# Salon App
 
-## Getting Started
+## Overview
+Salon App is a modern, full-featured salon management system built with Next.js, Tailwind CSS, and TypeScript. It allows salon owners to manage services, appointments, staff, and customer bookings efficiently. Clients can browse available services, book appointments, and manage their bookings with ease.
 
-First, run the development server:
+## Screenshots
 
-```bash
-npm run dev
-# or
-yarn dev
-# or
-pnpm dev
-# or
-bun dev
+### Admin Dashboard
+![Admin Dashboard](public/images/screenshots/admin-dashboard.png)
+
+### Booking Page
+![Booking Page](public/images/screenshots/booking-page.png)
+
+### Mobile View
+![Mobile View](public/images/screenshots/mobile-view.png)
+
+
+## Features
+- **Authentication**: Secure sign-up, login, and password recovery
+- **Admin Dashboard**: Manage appointments, services, staff, and customers
+- **Client Booking**: Browse services and book appointments online
+- **User Profiles**: Manage customer and staff profiles
+- **Real-Time Updates**: Instant booking confirmations and notifications
+- **Responsive UI**: Optimized for desktop and mobile devices
+- **State Management**: Zustand for efficient state handling
+- **Database**: MongoDB integration with Mongoose
+- **Email Notifications**: Automated booking confirmations
+
+## Tech Stack
+- **Frontend**: Next.js, React, TypeScript, Tailwind CSS
+- **Backend**: Next.js API routes, MongoDB with Mongoose
+- **State Management**: Zustand
+- **Authentication**: NextAuth.js
+- **Styling**: Tailwind CSS
+- **Deployment**: Vercel
+
+## Project Structure
+```
+salon-app/
+│── public/                     # Static assets (images, icons, etc.)
+│   ├── images/                  # Salon images, logos, banners
+│   ├── icons/                    # SVGs or icons
+│   └── favicon.ico               # Favicon
+│
+│── src/                         # Main application code
+│   ├── app/                     # Next.js app router (server components)
+│   │   ├── (auth)/              # Authentication pages (sign-in, sign-up)
+│   │   │   ├── login/page.tsx
+│   │   │   ├── register/page.tsx
+│   │   │   ├── forgot-password/page.tsx
+│   │   │   └── layout.tsx
+│   │   │
+│   │   ├── (dashboard)/         # Admin dashboard
+│   │   │   ├── layout.tsx
+│   │   │   ├── page.tsx         # Dashboard home
+│   │   │   ├── appointments/
+│   │   │   │   ├── page.tsx
+│   │   │   │   ├── [id]/page.tsx  # View single appointment
+│   │   │   ├── services/
+│   │   │   │   ├── page.tsx
+│   │   │   │   ├── create/page.tsx  # Add new service
+│   │   │   │   ├── [id]/edit.tsx     # Edit service
+│   │   │   ├── staff/
+│   │   │   │   ├── page.tsx
+│   │   │   │   ├── [id]/page.tsx  # Staff details
+│   │   │   ├── customers/
+│   │   │   │   ├── page.tsx
+│   │   │   │   ├── [id]/page.tsx  # Customer profile
+│   │   │   ├── settings/
+│   │   │   │   ├── page.tsx
+│   │   │   │   ├── profile.tsx
+│   │   │   │   ├── business-info.tsx
+│   │   │   │   ├── notifications.tsx
+│   │   │   │   ├── security.tsx
+│   │   │   │   └── email-preferences.tsx
+│   │   │
+│   │   ├── (client)/             # Client-facing pages (user-side)
+│   │   │   ├── layout.tsx
+│   │   │   ├── page.tsx         # Homepage
+│   │   │   ├── services/
+│   │   │   │   ├── page.tsx
+│   │   │   │   ├── [id]/page.tsx  # Individual service
+│   │   │   ├── booking/
+│   │   │   │   ├── page.tsx
+│   │   │   │   ├── [id]/page.tsx  # Booking confirmation
+│   │   │   ├── about/page.tsx
+│   │   │   ├── contact/page.tsx
+│   │   │   ├── reviews/page.tsx
+│   │   │
+│   │   ├── api/                  # API routes (server functions)
+│   │   │   ├── auth/
+│   │   │   │   ├── login.ts
+│   │   │   │   ├── register.ts
+│   │   │   ├── bookings/
+│   │   │   │   ├── route.ts
+│   │   │   ├── services/
+│   │   │   │   ├── route.ts
+│   │   │   ├── users/
+│   │   │   │   ├── route.ts
+│   │   │   ├── email/
+│   │   │   │   ├── send.ts
+│   │   │
+│   │   ├── layout.tsx             # Root layout
+│   │   ├── page.tsx               # Root homepage
+│   │   ├── globals.css            # Global styles
+│   │
+│   ├── components/                # Reusable UI components
+│   │   ├── ui/                    # Generic UI components (buttons, modals, etc.)
+│   │   ├── booking/               # Booking-related components
+│   │   ├── services/              # Service-related components
+│   │   ├── navbar/                # Navbar components
+│   │   ├── footer/                # Footer components
+│   │
+│   ├── hooks/                     # Custom React hooks
+│   ├── lib/                       # Utility functions
+│   ├── store/                     # Zustand state management
+│   ├── styles/                    # Additional styles
+│   ├── types/                     # TypeScript types
+│
+│── .env                           # Environment variables
+│── next.config.js                 # Next.js configuration
+│── tailwind.config.js             # Tailwind configuration
+│── tsconfig.json                   # TypeScript configuration
+│── package.json                    # Dependencies
+│── README.md                       # Documentation
 ```
 
-Open [http://localhost:3000](http://localhost:3000) with your browser to see the result.
+## Screenshots
+Include screenshots of the project here to showcase the UI and features.
 
-You can start editing the page by modifying `app/page.tsx`. The page auto-updates as you edit the file.
+## Installation
+```bash
+git clone https://github.com/yourusername/salon-app.git
+cd salon-app
+npm install
+```
 
-This project uses [`next/font`](https://nextjs.org/docs/app/building-your-application/optimizing/fonts) to automatically optimize and load [Geist](https://vercel.com/font), a new font family for Vercel.
+## Running the Project
+```bash
+npm run dev
+```
+The app will be available at `http://localhost:3000`
 
-## Learn More
+## Environment Variables
+Create a `.env` file and configure your variables:
+```
+DATABASE_URL=mongodb+srv://yourdatabase
+NEXTAUTH_SECRET=your_secret_key
+EMAIL_SERVER=smtp://your-email-server
+EMAIL_FROM=no-reply@salonapp.com
+```
 
-To learn more about Next.js, take a look at the following resources:
+## Deployment
+Deploy the project on [Vercel](https://vercel.com/) by connecting the repository and adding environment variables.
 
-- [Next.js Documentation](https://nextjs.org/docs) - learn about Next.js features and API.
-- [Learn Next.js](https://nextjs.org/learn) - an interactive Next.js tutorial.
+## License
+This project is licensed under the MIT License.
 
-You can check out [the Next.js GitHub repository](https://github.com/vercel/next.js) - your feedback and contributions are welcome!
-
-## Deploy on Vercel
-
-The easiest way to deploy your Next.js app is to use the [Vercel Platform](https://vercel.com/new?utm_medium=default-template&filter=next.js&utm_source=create-next-app&utm_campaign=create-next-app-readme) from the creators of Next.js.
-
-Check out our [Next.js deployment documentation](https://nextjs.org/docs/app/building-your-application/deploying) for more details.

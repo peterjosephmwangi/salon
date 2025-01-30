@@ -2,6 +2,7 @@
 
 import { useState } from "react";
 import { motion } from "framer-motion";
+import Image from "next/image";
 
 type MakeupServiceType = {
   title: string;
@@ -33,7 +34,13 @@ export default function MakeupServices() {
             transition={{ duration: 0.5, delay: index * 0.2 }}
           >
             <div className="flex flex-col items-center">
-              <div className="w-24 h-24 mb-4">{service.icon}</div>
+            <Image
+                            src={service.image}
+                            alt={service.title}
+                            width={500}
+                            height={300}
+                            className="w-full h-56 object-cover"
+                          />
               <h2 className="text-2xl font-semibold">{service.title}</h2>
               <p className="text-gray-600 text-center mt-2">{service.description}</p>
             </div>
@@ -70,29 +77,19 @@ const makeupServices = [
   {
     title: "Bridal Makeup",
     description: "Timeless and flawless beauty for your big day. Let us enhance your natural glow with stunning bridal makeup.",
-    icon: (
-      <svg viewBox="0 0 64 64" fill="none" xmlns="http://www.w3.org/2000/svg">
-        <circle cx="32" cy="32" r="30" fill="#E57373" />
-        <path d="M22 40h20M20 28h24" stroke="#fff" strokeWidth="4" strokeLinecap="round" />
-      </svg>
-    ),
+    image: "/images/bridal.webp",
+
   },
   {
     title: "Glam Night Out",
     description: "Dramatic eyes, bold lips, and a radiant finish. Stand out with our glamorous night-out makeup looks.",
-    icon: (
-      <svg viewBox="0 0 64 64" fill="none" xmlns="http://www.w3.org/2000/svg">
-        <rect x="10" y="10" width="44" height="44" rx="12" fill="#D81B60" />
-      </svg>
-    ),
+    image: "/images/eyes.png",
+
   },
   {
     title: "Editorial & Photoshoot",
     description: "High-fashion and camera-ready looks tailored for professional shoots and creative projects.",
-    icon: (
-      <svg viewBox="0 0 64 64" fill="none" xmlns="http://www.w3.org/2000/svg">
-        <path d="M10 32c6-6 12-6 18 0s12 6 18 0 12-6 18 0" stroke="#EC407A" strokeWidth="4" strokeLinecap="round" />
-      </svg>
-    ),
+    image: "/images/photo.jpeg",
+
   },
 ];
