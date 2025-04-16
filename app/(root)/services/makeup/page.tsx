@@ -3,12 +3,15 @@
 import { useState } from "react";
 import { motion } from "framer-motion";
 import Image from "next/image";
+import { FaHeart, FaStar, FaCamera } from "react-icons/fa";
 
 type MakeupServiceType = {
   title: string;
   description: string;
-  // icon: JSX.Element;
+  image: string;
+  icon: JSX.Element;
 };
+
 
 export default function MakeupServices() {
   const [selectedService, setSelectedService] = useState<MakeupServiceType | null>(null);
@@ -73,23 +76,24 @@ export default function MakeupServices() {
   );
 }
 
-const makeupServices = [
+
+const makeupServices: MakeupServiceType[] = [
   {
     title: "Bridal Makeup",
     description: "Timeless and flawless beauty for your big day. Let us enhance your natural glow with stunning bridal makeup.",
     image: "/images/bridal.webp",
-
+    icon: <FaHeart className="text-rose-500 text-4xl" />,
   },
   {
     title: "Glam Night Out",
     description: "Dramatic eyes, bold lips, and a radiant finish. Stand out with our glamorous night-out makeup looks.",
     image: "/images/eyes.png",
-
+    icon: <FaStar className="text-yellow-500 text-4xl" />,
   },
   {
     title: "Editorial & Photoshoot",
     description: "High-fashion and camera-ready looks tailored for professional shoots and creative projects.",
     image: "/images/photo.jpeg",
-
+    icon: <FaCamera className="text-blue-500 text-4xl" />,
   },
 ];
