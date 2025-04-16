@@ -10,7 +10,7 @@ type MakeupServiceType = {
   title: string;
   description: string;
   image: string;
-  icon: JSX.Element;
+  icon: React.ReactNode;
 };
 
 
