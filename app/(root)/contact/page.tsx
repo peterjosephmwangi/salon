@@ -29,7 +29,7 @@ export default function ContactPage() {
               </div>
               <div>
                 <label className="block text-gray-700">Message</label>
-                <textarea className="w-full p-3 border border-gray-300 rounded-lg focus:outline-none focus:ring-2 focus:ring-gray-400" rows="4" placeholder="Your Message"></textarea>
+                <textarea className="w-full p-3 border border-gray-300 rounded-lg focus:outline-none focus:ring-2 focus:ring-gray-400" rows={4} placeholder="Your Message"></textarea>
               </div>
               <button type="submit" className="w-full bg-gray-800 text-white py-3 rounded-lg hover:bg-gray-900 transition">
                 Send Message
