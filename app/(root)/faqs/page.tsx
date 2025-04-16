@@ -26,11 +26,12 @@ const faqs = [
 ];
 
 export default function FAQsPage() {
-  const [openIndex, setOpenIndex] = useState(null);
+const [openIndex, setOpenIndex] = useState<number | null>(null);
 
-  const toggleFAQ = (index) => {
-    setOpenIndex(openIndex === index ? null : index);
-  };
+const toggleFAQ = (index: number) => {
+  setOpenIndex(openIndex === index ? null : index);
+};
+
 
   return (
     <div className="max-w-3xl mx-auto p-6">
